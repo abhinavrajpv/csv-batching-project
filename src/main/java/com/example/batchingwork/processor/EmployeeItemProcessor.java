@@ -16,13 +16,13 @@ import com.example.batchingwork.entity.EmployeeError;
 public class EmployeeItemProcessor implements ItemProcessor<EmployeeCsvDto, ProcessingResultDto> {
 
 	@Override
-	public ProcessingResultDto process(EmployeeCsvDto record) {
-		
+	public ProcessingResultDto process(EmployeeCsvDto record) {		
 		/*
 		 * if ("1016".equals(record.getEmployeeId())) { throw new
 		 * RuntimeException("TEST: Processor failure"); }
+		 * 
 		 */
-
+		 
 		List<String> errors = new ArrayList<>();
 		BigDecimal salary = null;
 

@@ -90,32 +90,22 @@ public class EmployeeFileValidationTasklet implements Tasklet {
                                 + ", found: " + actualHeaders);
             }
 
-            String line;
-            int lineNumber = 1;
-            int dataRows = 0;
-
-            while ((line = reader.readLine()) != null) {
-                lineNumber++;
-
-                if (line.isBlank()) {
-                    throw new IllegalArgumentException(
-                            "Empty row at line " + lineNumber);
-                }
-
-                if (line.split(",", -1).length
-                        != requiredHeaders.size()) {
-                    throw new IllegalArgumentException(
-                            "Incorrect column count at line "
-                                    + lineNumber);
-                }
-
-                dataRows++;
-            }
-
-            if (dataRows == 0) {
-                throw new IllegalArgumentException(
-                        "CSV contains no data rows");
-            }
+			/*
+			 * String line; int lineNumber = 1; int dataRows = 0;
+			 * 
+			 * while ((line = reader.readLine()) != null) { lineNumber++;
+			 * 
+			 * if (line.isBlank()) { throw new IllegalArgumentException(
+			 * "Empty row at line " + lineNumber); }
+			 * 
+			 * if (line.split(",", -1).length != requiredHeaders.size()) { throw new
+			 * IllegalArgumentException( "Incorrect column count at line " + lineNumber); }
+			 * 
+			 * dataRows++; }
+			 * 
+			 * if (dataRows == 0) { throw new IllegalArgumentException(
+			 * "CSV contains no data rows"); }
+			 */
 
         } catch (IOException ex) {
             throw new IllegalStateException(
